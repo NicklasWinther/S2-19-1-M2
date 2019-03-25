@@ -111,24 +111,39 @@ section .wrapper {
             margin-top: 10px;
         }
 
-section .generatedMeme {
-    position: relative;
-    text-align: center;
-    color: white;
-    margin: auto;
-    width: 30%;
-}
+        
+
+        section .generatedMeme {
+            position: relative;
+            text-align: center;
+            color: white;
+            margin: auto;
+            width: 30%;
+        }
 
     section .generatedMeme img{
         width: 100%;
     }
 
-    /* Bottom left text */
-    section .generatedMeme .bottom-left {
-        position: absolute;
-        bottom: 8px;
-        left: 16px;
-    }
+    /* FONT SIZES */
+            section .generatedMeme .smallFont{
+                font-size: 1rem;
+            }
+            section .generatedMeme .mediumFont {
+                font-size: 2.5rem;
+            }
+            section .generatedMeme .bigFont {
+                font-size: 4rem;
+            }
+
+
+
+            /* Bottom left text */
+            section .generatedMeme .bottom-left {
+                position: absolute;
+                bottom: 8px;
+                left: 16px;
+            }
 
     /* Top left text */
     section .generatedMeme .top-left {
