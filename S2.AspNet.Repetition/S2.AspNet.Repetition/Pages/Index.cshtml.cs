@@ -16,7 +16,7 @@ namespace S2.AspNet.Repetition.Pages
         public string SelectedImageUrl { get; set; }
         public void OnGet()
         {
-            SelectedImageUrl = "/img/meme1.png";
+            SelectedImageUrl = $"/img/meme{ImageSelected}.png";
             
         }
     }
