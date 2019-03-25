@@ -71,7 +71,7 @@ p, a {
                         text-decoration: none;
                     }
 
-section h1 {
+section h1, section h2 {
     font-size: 3rem;
     color: white;
 }
@@ -169,6 +169,11 @@ section .generatedMeme {
         bottom: 8px;
         left: 50%;
         transform: translate(-50%, -50%);
+    }
+
+    section > a{
+        color: white;
+        padding: 30px;
     }
 
 @media screen and (max-width: 900px) {
