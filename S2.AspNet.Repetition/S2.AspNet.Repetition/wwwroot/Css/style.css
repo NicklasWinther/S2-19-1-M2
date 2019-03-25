@@ -113,7 +113,13 @@ section .generatedMeme {
     position: relative;
     text-align: center;
     color: white;
+    margin: auto;
+    width: 30%;
 }
+
+    section .generatedMeme img{
+        width: 100%;
+    }
 
     /* Bottom left text */
     section .generatedMeme .bottom-left {
