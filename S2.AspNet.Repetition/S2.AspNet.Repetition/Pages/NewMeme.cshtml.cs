@@ -25,6 +25,9 @@ namespace S2.AspNet.Repetition.Pages
 
         [BindProperty(SupportsGet = true)]
         public string FontSize { get; set; }
+
+        [BindProperty(SupportsGet = true)]
+        public string FontColor { get; set; }
         public void OnGet()
         {
             SelectedImageUrl = $"/img/meme{ImageSelected}.png";

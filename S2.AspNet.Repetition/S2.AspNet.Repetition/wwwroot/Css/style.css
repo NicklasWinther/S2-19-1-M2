@@ -135,9 +135,19 @@ section .wrapper {
             section .generatedMeme .bigFont {
                 font-size: 4rem;
             }
-
-
-
+            /* FONT COLORS */
+            section .generatedMeme .white{
+                color: white;
+            }
+            section .generatedMeme .black {
+                color: black;
+            }
+            section .generatedMeme .hotpink{
+                color: hotpink;
+            }
+            section .generatedMeme .blue{
+                color: #27d;
+            }
             /* Bottom left text */
             section .generatedMeme .bottom-left {
                 position: absolute;
