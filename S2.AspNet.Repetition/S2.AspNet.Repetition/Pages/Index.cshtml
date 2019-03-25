@@ -45,17 +45,21 @@
                 </div>
 
             </div>
+
             <div class="memeSelector memeText">
                 <input type="text" size="50" name="memeText" placeholder="Skriv din meme text" />
+
                 <select name="PositionOfText">
-                <option value="top-left">Top left</option>
-                <option value="top-center">Top center</option>
-                <option value="top-right">Top right</option>
-                <option value="centered">Center</option>
-                <option value="bottom-left">Bottom left</option>
-                <option value="bottom-center">Bottom center</option>
-                <option value="bottom-right">Bottom right</option>
+                    <option value="top-left">Top left</option>
+                    <option value="top-center">Top center</option>
+                    <option value="top-right">Top right</option>
+                    <option value="centered">Center</option>
+                    <option value="bottom-left">Bottom left</option>
+                    <option value="bottom-center" selected>Bottom center</option>
+                    <option value="bottom-right">Bottom right</option>
                 </select>
+
+                <input type="text" size="50" name="MemeName" placeholder="Navngiv meme"/>
                 <input type="submit" value="Generer meme" />
             </div>
         </form>
