@@ -11,6 +11,7 @@ namespace S2.AspNet.Repetition.Pages
 {
     public class NewMemeModel : PageModel
     {
+        public MemeCreation Meme { get; set; }
         [BindProperty(SupportsGet = true)]
         public int ImageSelected { get; set; }
 
@@ -35,7 +36,24 @@ namespace S2.AspNet.Repetition.Pages
             MemeImageRepository memeImageRepo = new MemeImageRepository(@"Data Source=(localdb)\mssqllocaldb;Initial Catalog=MemeGenerator;Integrated Security=True;");
 
             SelectedImageUrl = memeImageRepo.GetUrlFrom(ImageSelected);
+
+            SaveMemeInDb();
         }
        
+        private void SaveMemeInDb()
+        {
+            MemeCreationRepository memeCreationRepo = new MemeCreationRepository(@"Data Source=(localdb)\mssqllocaldb;Initial Catalog=MemeGenerator;Integrated Security=True;");
+
+            MemeCreation memeCreation = new MemeCreation()
+            {
+                MemeImage = ImageSelected,
+                Text = MemeText,
+                Position = PositionOfText,
+                Color = FontColor,
+                Size = FontSize
+            };
+
+            int rowsAffected = memeCreationRepo.Insert(memeCreation);
+        }
     }
 }
