@@ -12,9 +12,6 @@ namespace S2.AspNet.Repetition.Pages
 {
     public class RandomMemeModel : PageModel 
     {
-       
-
-
         public MemeCreation randomMeme { get; set; }
         public void OnGet()
         {

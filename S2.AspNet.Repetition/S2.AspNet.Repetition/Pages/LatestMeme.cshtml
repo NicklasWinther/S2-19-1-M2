@@ -7,3 +7,9 @@
 
 <h2>LatestMeme</h2>
 
+<div class="generatedMeme">
+    <img src="@Model.latestMeme.MemeImage.Url" />
+    <div class="@Model.latestMeme.Position @Model.latestMeme.Size @Model.latestMeme.Color">
+        @Model.latestMeme.Text
+    </div>
+</div>

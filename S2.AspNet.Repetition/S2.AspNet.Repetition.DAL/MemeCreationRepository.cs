@@ -42,5 +42,29 @@ namespace S2.AspNet.Repetition.DAL
 
             return meme;
         }
+
+        public MemeCreation GetLatestMeme()
+        {
+            string sql = "SELECT TOP(1) MemeCreations.*, MemeImages.Url, MemeImages.AltText " +
+                "FROM MemeCreations " +
+                "JOIN MemeImages ON MemeCreations.MemeImg = MemeImages.Id " +
+                "ORDER BY TimeStamp DESC; ";
+
+            DataTable MemeImagesTable = ExecuteQuery(sql);
+            DataRow row = MemeImagesTable.Rows[0];
+
+            int memeImg = (int)row["MemeImg"];
+            DateTime timeStamp = (DateTime)row["TimeStamp"];
+            string memeText = (string)row["MemeText"];
+            string position = (string)row["Position"];
+            string color = (string)row["Color"];
+            string size = (string)row["Size"];
+            string url = (string)row["Url"];
+            string altText = (string)row["AltText"];
+            MemeImage memeImage = new MemeImage(memeImg, url, altText);
+            MemeCreation meme = new MemeCreation(memeImage, memeImg, timeStamp, memeText, position, color, size);
+
+            return meme;
+        }
     }
 }
