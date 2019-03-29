@@ -6,34 +6,10 @@
 }
 
 <h2>RandomMeme</h2>
-<div class="wrapper">
-    <article>
-        <form method="get">
 
-
-            <p></p>
-            <div class="memeWrapper">
-                @for (int i = 1; i < 8; i++)
-                {
-                    string imgUrl = $"/Img/meme{i}.png";
-                    <div class="memeSelector">
-                        <img src=@imgUrl />
-                        <input type="radio" name="imageselected" value="@i" checked />
-                    </div>
-                }
-
-            </div>
-            <input type="submit" name="name" value="Generer min meme nu!" />
-        </form>
-
-        @if (Model.MemeText != "")
-        {
-            <div class="generatedMeme">
-                <img src="@Model.SelectedImageUrl" />
-                <div class="@Model.PositionOfText @Model.FontSize @Model.FontColor">
-                    @Model.MemeText
-                </div>
-            </div>
-        }
-        </article>
+<div class="generatedMeme">
+    <img src="@Model.randomMeme.MemeImage.Url" />
+    <div class="@Model.randomMeme.Position @Model.randomMeme.Size @Model.randomMeme.Color">
+        @Model.randomMeme.Text
+    </div>
 </div>

@@ -76,11 +76,6 @@ section h1, section h2 {
     color: white;
 }
 
-section .wrapper {
-    display: flex;
-}
-
-
     section .wrapper article {
         padding: 2%;
     }

@@ -46,7 +46,7 @@ namespace S2.AspNet.Repetition.Pages
 
             MemeCreation memeCreation = new MemeCreation()
             {
-                MemeImage = ImageSelected,
+                MemeImageId = ImageSelected,
                 Text = MemeText,
                 Position = PositionOfText,
                 Color = FontColor,
