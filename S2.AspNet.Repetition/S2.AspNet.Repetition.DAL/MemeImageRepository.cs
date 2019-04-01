@@ -50,5 +50,21 @@ namespace S2.AspNet.Repetition.DAL
             }
             
         }
+
+        public MemeImage GetMostUsedImage()
+        {
+            string sql = "SELECT TOP(1) COUNT(MemeImg) as Images, Url, AltText " +
+                "FROM MemeCreations " +
+                "JOIN MemeImages ON MemeCreations.MemeImg = MemeImages.Id " +
+                "GROUP BY MemeImages.Url, AltText " +
+                "ORDER BY Images DESC";
+
+            DataTable memeImageTable = ExecuteQuery(sql);
+            MemeImage memeImage = new MemeImage();
+            memeImage.Url = (string)memeImageTable.Rows[0]["Url"];
+            memeImage.AltText = (string)memeImageTable.Rows[0]["AltText"];
+
+            return memeImage;
+        }
     }
 }

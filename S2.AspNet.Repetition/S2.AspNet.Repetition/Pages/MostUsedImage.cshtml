@@ -1,0 +1,13 @@
+﻿@page
+@model S2.AspNet.Repetition.Pages.MostUsedImageModel
+@{
+    ViewData["Title"] = "MostUsedImage";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h2>Det mest anvendte billede er:</h2>
+
+<div class="generatedMeme">
+    <img src="@Model.mostUsedImg.Url" alt="@Model.mostUsedImg.AltText" />
+    <h3>@Model.mostUsedImg.AltText</h3>
+</div>

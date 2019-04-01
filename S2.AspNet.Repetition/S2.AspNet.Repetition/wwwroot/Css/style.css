@@ -62,13 +62,15 @@ p, a {
             }
 
                 .hero header .navbar nav ul li {
-                    padding: 0 3vw;
                     font-weight: bold;
+                    
                 }
 
                     .hero header .navbar nav ul li a {
                         color: black;
                         text-decoration: none;
+                        padding: 0 3vw;
+                        display: block;
                     }
 
 section h1, section h2 {
