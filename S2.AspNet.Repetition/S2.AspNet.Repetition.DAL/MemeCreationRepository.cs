@@ -82,5 +82,48 @@ namespace S2.AspNet.Repetition.DAL
 
             return memePosition;
         }
+
+        public MemeCreation GetMostUsedColor()
+        {
+            string sql = "SELECT TOP(1) COUNT(Id), Color " +
+                "FROM MemeCreations " +
+                "GROUP BY Color " +
+                "ORDER BY COUNT(Id) DESC";
+
+            DataTable memeCreationTable = ExecuteQuery(sql);
+
+            MemeCreation memeColor = new MemeCreation();
+
+            memeColor.Color = (string)memeCreationTable.Rows[0]["Color"];
+
+            return memeColor;
+        }
+
+        public List<MemeCreation> SearchForMeme(string searchString)
+        {
+            string sql = $"SELECT MemeCreations.*, Url, AltText FROM MemeCreations JOIN MemeImages ON MemeCreations.MemeImg = MemeImages.Id WHERE MemeText LIKE '%{searchString}%'";
+
+            DataTable MemeTable = ExecuteQuery(sql);
+
+            List<MemeCreation> memeList = new List<MemeCreation>();
+
+            foreach (DataRow row in MemeTable.Rows)
+            {
+                int memeImg = (int)row["MemeImg"];
+                DateTime timeStamp = (DateTime)row["TimeStamp"];
+                string memeText = (string)row["MemeText"];
+                string position = (string)row["Position"];
+                string color = (string)row["Color"];
+                string size = (string)row["Size"];
+                string url = (string)row["Url"];
+                string altText = (string)row["AltText"];
+                MemeImage memeImage = new MemeImage(memeImg, url, altText);
+                MemeCreation meme = new MemeCreation(memeImage, memeImg, timeStamp, memeText, position, color, size);
+
+                memeList.Add(meme);
+            }
+
+            return memeList;
+        }
     }
 }

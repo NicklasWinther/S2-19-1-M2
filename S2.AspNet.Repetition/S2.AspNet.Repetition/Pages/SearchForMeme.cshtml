@@ -1,0 +1,33 @@
+﻿@page
+@model S2.AspNet.Repetition.Pages.SearchForMemeModel
+@using S2.AspNet.Repetition.Entities
+@{
+    ViewData["Title"] = "SearchForMeme";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h2>SearchForMeme</h2>
+
+<div class="wrapper">
+    <article>
+        <form method="get">
+            <div class="memeSelector memeText">
+                <input type="text" name="searchString" />
+                <input type="submit" />
+            </div>
+        </form>
+    </article>
+</div>
+@if (Model.searchString != "")
+{
+    foreach (MemeCreation meme in Model.memes)
+    {
+        <div class="generatedMeme">
+            <img src="@meme.MemeImage.Url" />
+            <div class="@meme.Position @meme.Size @meme.Color">
+                @meme.Text
+            </div>
+        </div>
+    }
+
+}

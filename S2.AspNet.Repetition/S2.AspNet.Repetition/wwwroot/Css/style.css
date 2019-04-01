@@ -123,26 +123,26 @@ section h1, section h2 {
     }
 
     /* FONT SIZES */
-            section .generatedMeme .smallFont{
+            section .smallFont{
                 font-size: 1rem;
             }
-            section .generatedMeme .mediumFont {
+            section .mediumFont {
                 font-size: 2.5rem;
             }
-            section .generatedMeme .bigFont {
+            section .bigFont {
                 font-size: 4rem;
             }
             /* FONT COLORS */
-            section .generatedMeme .white{
+            section .white{
                 color: white;
             }
-            section .generatedMeme .black {
+            section .black {
                 color: black;
             }
-            section .generatedMeme .hotpink{
+            section .hotpink{
                 color: hotpink;
             }
-            section .generatedMeme .blue{
+            section .blue{
                 color: #27d;
             }
             /* Bottom left text */
